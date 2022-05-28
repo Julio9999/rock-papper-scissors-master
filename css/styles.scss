@@ -1,9 +1,9 @@
 //Primary
-$Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
-$Paper-Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
-$Rock-Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
-$Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
-$Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+$Scissors-Gradient: hsl(39, 89%, 49%) , hsl(40, 84%, 53%);
+$Paper-Gradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+$Rock-Gradient: hsl(349, 71%, 52%) , hsl(349, 70%, 56%);
+$Lizard-Gradient: hsl(261, 73%, 60%) , hsl(261, 72%, 63%);
+$Cyan: hsl(189, 59%, 53%) , hsl(189, 58%, 57%);
 
 //Neutral
 $Dark-Text: hsl(229, 25%, 31%);
@@ -11,32 +11,41 @@ $Score-Text: hsl(229, 64%, 46%);
 $Header-Outline: hsl(217, 16%, 45%);
 
 //Background
-$Radial-Gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+$Radial-Gradient: hsl(214, 47%, 23%) , hsl(237, 49%, 15%);
 
 .attribution a { color: hsl(228, 45%, 44%); }
 .attribution { font-size: 11px; text-align: center; }
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-family: 'Poppins', sans-serif;
-    background-image: radial-gradient($Radial-Gradient);
+    background-image: linear-gradient($Radial-Gradient);
     color: white;
 }
 
 .container{
-    height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1rem;
 }
 
 .header{
     outline:$Header-Outline 2px solid;
     border-radius: 3px;
     width: 80%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1rem;
     padding: .9rem;
     display: flex;
     justify-content: space-between;
+    
 
     .item-container{
 
@@ -68,4 +77,72 @@ body{
     }
 }
 
+.options{
+    display:grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+    background-image: url(/images/bg-triangle.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
 
+    .wrapper{
+        border-radius: 50%;
+        padding: 1rem;
+        display: flex;
+
+        .options__item{
+            background-size: 45%;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 3rem;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0px 5px hsl(0, 0%, 80%) inset;
+        }
+    }
+    
+    .papper-wrapper{
+        background-image: linear-gradient($Paper-Gradient);
+        box-shadow: 0px 5px hsl(230, 89%, 52%);
+
+        .papper{
+            background-image: url(/images/icon-paper.svg);
+        }
+    }
+
+    .scissors-wrapper{
+        background-image: linear-gradient($Scissors-Gradient);
+        box-shadow: 0px 5px hsl(39, 89%, 40%);
+
+        .scissors{
+            background-image: url(/images/icon-scissors.svg);
+        }
+    }
+
+    .rock-wrapper{
+        background-image: linear-gradient($Rock-Gradient);
+        box-shadow: 0px 5px hsl(349, 71%, 42%);
+        grid-column: -3/-1;
+
+        .rock{
+            background-image: url(/images/icon-rock.svg);
+        }
+    }
+
+
+}
+
+
+.modal-rules{
+    border: 1px white solid;
+    text-align: center;
+    padding: .5rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
