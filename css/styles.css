@@ -156,6 +156,17 @@ body {
   background-image: url(/images/icon-rock.svg);
 }
 
+.show-modal {
+  color: white;
+  background-color: transparent;
+  border: thin white solid;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5rem 2rem;
+  letter-spacing: 2px;
+}
+
 .modal-rules {
   font-weight: 600;
   font-size: 30px;
@@ -174,12 +185,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-transition: all .5s;
   transition: all .5s;
   top: -100vh;
+  padding: 2rem;
 }
 
 .modal-rules .modal-rules__heading {
@@ -187,76 +199,13 @@ body {
   color: #3b4363;
 }
 
-.show-modal-text {
-  border: 1px white solid;
-  text-align: center;
-  padding: .5rem 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 8px;
-  letter-spacing: 2px;
-}
-
-.close-modal-text {
-  z-index: 100;
-  color: black;
-  text-align: center;
-  font-size: 30px;
-  color: #3b4363;
-  position: absolute;
-  left: 0;
-  right: 0;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  top: -100vh;
-}
-
-.close-modal-text svg {
-  width: 5%;
-  height: 5%;
-}
-
-.close-modal-text svg {
+.modal-rules .modal-rules__icon {
+  width: 10%;
+  height: auto;
   fill: #3b4363;
 }
 
-@-webkit-keyframes visibility {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes visibility {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.show-modal-input, .close-modal-input {
-  display: none;
-}
-
-.show-modal-input:checked ~ .modal-rules {
-  top: 0;
-}
-
-.show-modal-input:checked ~ .close-modal-text {
-  top: 90vh;
+.modal-rules-active {
+  top: 0vh;
 }
 /*# sourceMappingURL=styles.css.map */

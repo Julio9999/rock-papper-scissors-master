@@ -91,6 +91,7 @@ body{
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center center;
+    //border: 1px black solid;
 
     .wrapper{
         border-radius: 50%;
@@ -140,6 +141,17 @@ body{
 }
 
 
+.show-modal{
+    color: white;
+    background-color: transparent;
+    border: thin white solid;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5rem 2rem;
+    letter-spacing: 2px;
+}
+
 .modal-rules{
     font-weight: 600;
     font-size: 30px;
@@ -151,79 +163,35 @@ body{
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     transition: all .5s;
     top: -100vh;
+    padding:2rem;
 
     .modal-rules__heading{
         z-index: 10;
         color: $Dark-Text;
     }
-}
 
-
-
-.show-modal-text{
-    border: 1px white solid;
-    text-align: center;
-    padding: .5rem 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    letter-spacing: 2px;
-}
-
-.close-modal-text{
-    z-index: 100;
-    color: black;
-    text-align: center;
-    font-size: 30px;
-    color: $Dark-Text;
-    position: absolute;
-    left:0;
-    right: 0;
-    transition: all .5s;
-    top: -100vh;
-    svg{
-        width: 5%;
-        height:5%;
-    }
-
-    svg {
+    .modal-rules__icon{
+        width: 10%;
+        height: auto;
         fill: $Dark-Text;
     }
 }
 
-
-@keyframes visibility{
-    0%{
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    99%{
-        opacity: 0;
-    }
-
-    100%{
-        opacity: 1;
-        visibility: visible;
-    }
+.modal-rules-active{
+    top: 0vh;
 }
 
-.show-modal-input, .close-modal-input{
-    display:none;
+
+@media screen and (min-width: 900px){
+
 }
 
-.show-modal-input:checked ~{
-    .modal-rules{
-        top: 0;
-    }
 
-    .close-modal-text{
-        top: 90vh;
-    }
-}
+
+
 
 
 
