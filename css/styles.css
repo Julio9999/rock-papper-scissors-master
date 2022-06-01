@@ -130,7 +130,7 @@ body {
 }
 
 .options .papper-wrapper .papper {
-  background-image: url(/images/icon-paper.svg);
+  background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/c599c840ffd240848ccce563b3d9bf45cf67a3d1/images/icon-paper.svg");
 }
 
 .options .scissors-wrapper {
@@ -141,7 +141,7 @@ body {
 }
 
 .options .scissors-wrapper .scissors {
-  background-image: url(/images/icon-scissors.svg);
+  background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/c599c840ffd240848ccce563b3d9bf45cf67a3d1/images/icon-scissors.svg");
 }
 
 .options .rock-wrapper {
@@ -153,7 +153,7 @@ body {
 }
 
 .options .rock-wrapper .rock {
-  background-image: url(/images/icon-rock.svg);
+  background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/c599c840ffd240848ccce563b3d9bf45cf67a3d1/images/icon-rock.svg");
 }
 
 .show-modal {
