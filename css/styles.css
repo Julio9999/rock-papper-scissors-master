@@ -97,7 +97,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 375px;
-  background-image: url(/images/bg-triangle.svg);
+  background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/main/images/bg-triangle.svg");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center center;
