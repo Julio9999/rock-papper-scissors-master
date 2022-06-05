@@ -29,11 +29,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   height: 100vh;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5rem;
 }
 
 .header {
@@ -93,6 +93,8 @@ body {
   gap: 1.5rem;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (10rem)[2];
+      grid-template-rows: repeat(2, 10rem);
   justify-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -101,6 +103,7 @@ body {
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center center;
+  border: 1px black solid;
 }
 
 .options-container .options-container__item {
@@ -234,5 +237,16 @@ body {
 
 .modal-rules-active {
   top: 0vh;
+}
+
+.result-container {
+  text-align: center;
+  grid-column: -3/-1;
+  padding-top: 3rem;
+}
+
+.result-container .result {
+  display: block;
+  font-size: 32px;
 }
 /*# sourceMappingURL=styles.css.map */
