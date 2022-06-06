@@ -1,9 +1,18 @@
-const d = document;
+const d = document,
+w = window;
 
 export default function modal(e, icon_close,icon_open, modal){
     let $modal = d.querySelector(modal);
-
-    if(e.target.matches(icon_close) || e.target.matches(`${icon_close} *`) || e.target.matches(icon_open)){
-        $modal.classList.toggle('modal-rules-active');
+    if(e.target.matches(icon_open)){
+        $modal.classList.add('modal-rules-active');
+        w.scrollTo(0,0);
+        w.addEventListener('scroll',scrolloff);
+    }else if(e.target.matches(icon_close) || e.target.matches(`${icon_close} *`) ){
+        $modal.classList.remove('modal-rules-active');
+        w.removeEventListener('scroll',scrolloff);
     }
+}
+
+function scrolloff(){
+    w.scrollTo(0,0);
 }

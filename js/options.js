@@ -1,13 +1,13 @@
 const d = document;
 
 
-export default function options(e, oldchild, option, handler){
+export default function options(e, oldchild){
 
     let $newChild = d.importNode(oldchild),
-    $options = d.querySelectorAll('.options-container__item');
+    $options = d.querySelectorAll('.wrapper');
     $newChild.style.setProperty('background-image', 'none');
 
-    if((e.target.matches(`${option} *`))){
+    if((e.target.matches('.wrapper, .wrapper *')) && (!d.querySelector('.choosen'))){
         let $node;
         if(e.target.matches('.wrapper')){
             $node = d.importNode(e.target.parentElement, true);
@@ -15,24 +15,35 @@ export default function options(e, oldchild, option, handler){
             $node = d.importNode(e.target.parentElement.parentElement, true);
         }
 
-        $node.removeEventListener('click', handler);
-        $node.querySelector('.options__picked').style.setProperty('display', 'inline')
-        $node.style.setProperty('grid-column', '1/2')
-        let numero = Math.round(Math.random() * (2));
+        console.log($node);
+        $node.style.setProperty('grid-column', '1/2');
         d.querySelector('.container').replaceChild($newChild, oldchild);
-        $newChild.appendChild($node);
 
-        $node = d.importNode($options[numero], true)
-        $node.style.setProperty('grid-column', '2/-1')
-        $node.querySelector('.options__house').style.setProperty('display', 'inline')
+        $node.classList.add('choosen');
+        $newChild.append($node)
+
+
+        let numero = Math.round(Math.random() * (2));
+        $newChild.appendChild($node);
+        let node2 = d.importNode($node, true);
+        node2.classList.add('vacio');
+        node2.style.setProperty('grid-column', '2/3');
+
+        node2.querySelector('.wrapper').classList.add('choosen');
+        $newChild.appendChild(node2);
+
+
+        let $node3 = d.importNode($options[numero], true);
+
         setTimeout(()=>{
-            $newChild.appendChild($node)
+            node2.classList.remove('vacio');
+            node2.replaceChild($node3, node2.children[0]);
             $newChild.insertAdjacentHTML('beforeend',
             `<div class="result-container">
             <span class="result"></span>
             <button class="reset">Play Again</button>
             </div>`)
-            d.querySelector('.result').textContent = calc_result($newChild.childNodes[0].classList[1],$newChild.childNodes[1].classList[1]);
+            d.querySelector('.result').textContent = calc_result($newChild.children[0].classList[1],$newChild.children[1].classList[1]);
         },1000)
 
         function calc_result(class1,class2){
