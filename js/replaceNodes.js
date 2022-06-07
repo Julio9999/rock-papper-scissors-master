@@ -17,19 +17,24 @@ export default function replaceNodes(e, oldchild) {
         $node1 = d.importNode(e.target.parentElement.parentElement, true);
     }
 
+    $node2 = d.importNode($node1, true);
+    $node2.classList.add('vacio');
+    $node2.style.setProperty('grid-column', '2/3');
+    $node2.querySelector('.wrapper').classList.add('choosen');
+    $node2.querySelector('.picked').textContent = 'THE HOUSE PICKED'
+    $node2.classList.add('choosen');
+
+
     $node1.style.setProperty('grid-column', '1/2');
     d.querySelector('.container').replaceChild($newChild, oldchild);
+    $node1.querySelector('.picked').textContent = 'YOU PICKED'
 
     $node1.classList.add('choosen');
     $newChild.append($node1)
 
     number = Math.round(Math.random() * (2));
     $newChild.appendChild($node1);
-    $node2 = d.importNode($node1, true);
-    $node2.classList.add('vacio');
-    $node2.style.setProperty('grid-column', '2/3');
-
-    $node2.querySelector('.wrapper').classList.add('choosen');
+    
     $newChild.appendChild($node2);
 
 
