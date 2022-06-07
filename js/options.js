@@ -1,7 +1,9 @@
+import calc_result from "./calc_result.js";
+import showResults from "./showResults.js";
+
 const d = document;
 
-
-export default function options(e, oldchild){
+export default function options(e, oldchild, score){
 
     let $newChild = d.importNode(oldchild),
     $options = d.querySelectorAll('.wrapper');
@@ -15,7 +17,6 @@ export default function options(e, oldchild){
             $node = d.importNode(e.target.parentElement.parentElement, true);
         }
 
-        console.log($node);
         $node.style.setProperty('grid-column', '1/2');
         d.querySelector('.container').replaceChild($newChild, oldchild);
 
@@ -38,22 +39,8 @@ export default function options(e, oldchild){
         setTimeout(()=>{
             node2.classList.remove('vacio');
             node2.replaceChild($node3, node2.children[0]);
-            $newChild.insertAdjacentHTML('beforeend',
-            `<div class="result-container">
-            <span class="result"></span>
-            <button class="reset">Play Again</button>
-            </div>`)
-            d.querySelector('.result').textContent = calc_result($newChild.children[0].classList[1],$newChild.children[1].classList[1]);
-        },1000)
-
-        function calc_result(class1,class2){
-            if((class1 == 'item1' && class2 == 'item3') ||(class1 == 'item3' && class2 == 'item2') || (class1 == 'item2' && class2 == 'item1')){
-                return "YOU WIN"
-            }else if((class1 == 'item1' && class2 == 'item2') ||(class1 == 'item2' && class2 == 'item3') || (class1 == 'item3' && class2 == 'item1')){
-                return "YOU LOSE"
-            }else{
-                return "TIE"
-            }
-        }
+            let result = calc_result($newChild.children[0],$newChild.children[1]);
+            showResults(result, $newChild, score);
+        },500)
     }
 }
