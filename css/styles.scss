@@ -23,9 +23,9 @@ $Radial-Gradient: hsl(214, 47%, 23%) , hsl(237, 49%, 15%);
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-family: 'Poppins', sans-serif;
-    background-image: linear-gradient($Radial-Gradient);
     color: white;
-    height: 100%;
+    //height: 100vh;
+    background-image: linear-gradient($Radial-Gradient);
 }
 
 .container{
@@ -37,6 +37,7 @@ body{
     gap: 2.5rem;
     height: 100%;
     position: relative;
+ //   border: 5px red solid;
 }
 
 .header{
@@ -82,6 +83,7 @@ body{
     display:grid;
     margin-top: 3.8rem;
     gap: .5rem;
+    user-select: none;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,10rem);
     justify-items: center;
@@ -179,6 +181,12 @@ body{
     cursor: pointer;
 }
 
+.show-modal:hover{
+    background-color: white;
+    background-clip: text;
+    color: black;
+}
+
 .modal-rules{
     font-weight: 600;
     font-size: 30px;
@@ -254,9 +262,6 @@ body{
     outline: 15px rgba(96, 110, 133, .3) solid;
     border-radius:50%;
     z-index: 5;
-    //animation-name: anillo1;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
 }
 
 .winner::before{
@@ -270,12 +275,6 @@ body{
     left: 0;
     top: 0;
     z-index: 0;
-    //animation-name: anillo2;
-    animation-duration: 1.5s;
-    animation-delay: .5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    
 }
 
 .winner::after{
@@ -289,11 +288,6 @@ body{
     left: 0;
     top: 0;
     z-index: 0;
-    //animation-name: anillo3;
-    animation-duration: 1.5s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
 }
 
 
@@ -307,6 +301,9 @@ body{
 @media screen and (min-width: 1000px){
     body{
         height: 100vh;
+    }
+    .container{
+        gap: 1rem;
     }
     .header{
         width: 40%;
@@ -329,7 +326,7 @@ body{
         margin-left: auto;
         margin-right: auto;
         align-items: center;
-        gap: 1rem;
+        gap: 0rem;
         .choosen{
             grid-row: 1/3;
             .wrapper{
@@ -372,11 +369,12 @@ body{
     }
 
     .show-modal{
-        margin-right: 0;
+        margin-right: 2rem;
     }
     .modal-rules{
         width: 25rem;
         border-radius: 10px;
+        top: -120vh;
         .modal-rules__heading{
             text-align: start;
             display: block;
@@ -391,7 +389,6 @@ body{
             z-index: 40;
         }
     }
-    
     .modal-rules-active{
         height: 25rem;
         top: 20%;

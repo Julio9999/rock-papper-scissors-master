@@ -15,10 +15,9 @@
 body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-family: 'Poppins', sans-serif;
+  color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#1f3756), to(#141539));
   background-image: linear-gradient(#1f3756, #141539);
-  color: white;
-  height: 100%;
 }
 
 .container {
@@ -97,6 +96,10 @@ body {
   display: grid;
   margin-top: 3.8rem;
   gap: .5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: (10rem)[2];
@@ -222,6 +225,12 @@ body {
   cursor: pointer;
 }
 
+.show-modal:hover {
+  background-color: white;
+  background-clip: text;
+  color: black;
+}
+
 .modal-rules {
   font-weight: 600;
   font-size: 30px;
@@ -313,10 +322,6 @@ body {
   outline: 15px rgba(96, 110, 133, 0.3) solid;
   border-radius: 50%;
   z-index: 5;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
 }
 
 .winner::before {
@@ -331,14 +336,6 @@ body {
   left: 0;
   top: 0;
   z-index: 0;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
 }
 
 .winner::after {
@@ -353,14 +350,6 @@ body {
   left: 0;
   top: 0;
   z-index: 0;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
 }
 
 .choosen .wrapper:hover {
@@ -371,6 +360,9 @@ body {
 @media screen and (min-width: 1000px) {
   body {
     height: 100vh;
+  }
+  .container {
+    gap: 1rem;
   }
   .header {
     width: 40%;
@@ -395,7 +387,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 1rem;
+    gap: 0rem;
   }
   .options-container .choosen {
     -ms-grid-row: 1;
@@ -439,11 +431,12 @@ body {
             justify-content: space-between;
   }
   .show-modal {
-    margin-right: 0;
+    margin-right: 2rem;
   }
   .modal-rules {
     width: 25rem;
     border-radius: 10px;
+    top: -120vh;
   }
   .modal-rules .modal-rules__heading {
     text-align: start;
