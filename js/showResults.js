@@ -31,5 +31,6 @@ export default function showResults(result, node){
             d.querySelector('.score-group__number').textContent = score;
             node.children[1].children[0].classList.add('winner');
         }
+        d.querySelector('.options-container').classList.add('options-container-active2');
     },500)
 }

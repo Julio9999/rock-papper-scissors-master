@@ -36,10 +36,9 @@ export default function replaceNodes(e, oldchild) {
     $newChild.appendChild($node1);
     
     $newChild.appendChild($node2);
-    $newChild.classList.add('options-container-active');
 
     $node3 = d.importNode($options[number], true);
-
+    $newChild.classList.add('options-container-active1');
     setTimeout(() => {
         $node2.classList.remove('vacio');
         $node2.replaceChild($node3, $node2.children[0]);
