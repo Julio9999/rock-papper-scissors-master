@@ -37,6 +37,7 @@ body {
       justify-content: space-around;
   gap: 2.5rem;
   height: 100%;
+  position: relative;
 }
 
 .header {
@@ -45,7 +46,7 @@ body {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: .9rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -219,7 +220,7 @@ body {
 .modal-rules {
   font-weight: 600;
   font-size: 30px;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   background-color: white;
   z-index: 10;
@@ -305,8 +306,6 @@ body {
   outline: 15px rgba(96, 110, 133, 0.3) solid;
   border-radius: 50%;
   z-index: 5;
-  -webkit-animation-name: anillo1;
-          animation-name: anillo1;
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
   -webkit-animation-iteration-count: infinite;
@@ -325,8 +324,6 @@ body {
   left: 0;
   top: 0;
   z-index: 0;
-  -webkit-animation-name: anillo2;
-          animation-name: anillo2;
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
   -webkit-animation-delay: .5s;
@@ -349,8 +346,6 @@ body {
   left: 0;
   top: 0;
   z-index: 0;
-  -webkit-animation-name: anillo3;
-          animation-name: anillo3;
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
   -webkit-animation-delay: 1s;
@@ -364,6 +359,77 @@ body {
 .choosen .wrapper:hover {
   -webkit-transform: scale(1) !important;
           transform: scale(1) !important;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    height: 100vh;
+  }
+  .header {
+    width: 40%;
+  }
+  .header .logo-container {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+  }
+  .header .logo-container .logo {
+    width: 100%;
+  }
+  .header .score-group {
+    -ms-flex-preferred-size: 15%;
+        flex-basis: 15%;
+  }
+  .options-container {
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    position: relative;
+  }
+  .options-container .choosen .wrapper {
+    padding: 1.5rem;
+  }
+  .options-container .choosen .wrapper .options__item {
+    padding: 6rem;
+  }
+  .options-container .result-container {
+    position: absolute;
+    top: 0;
+  }
+  .options-container-active {
+    width: 80%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  .show-modal {
+    margin-right: 0;
+  }
+  .modal-rules {
+    width: 40vw;
+    height: 60vh;
+    border: 1px black solid;
+  }
+  .modal-rules .modal-rules__heading {
+    text-align: start;
+    display: block;
+    width: 100%;
+  }
+  .modal-rules .modal-rules__icon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 5%;
+    height: auto;
+    z-index: 40;
+  }
+  .modal-rules-active {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 20;
+  }
 }
 
 @-webkit-keyframes anillo1 {
