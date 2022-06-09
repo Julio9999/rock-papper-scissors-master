@@ -5,21 +5,21 @@ export default function showResults(result, node){
     
     setTimeout(()=>{
         node.insertAdjacentHTML('beforeEnd',
-            `<div class="result-container">
-                <span class="result"></span>
-                <button class="reset">PLAY AGAIN</button>
+            `<div class="result-group">
+                <span class="result-group__text"></span>
+                <button class="result-group__button">PLAY AGAIN</button>
             </div>`)
 
         if(result == 0){
-            d.querySelector('.result').textContent = 'TIE';
+            d.querySelector('.result-group__text').textContent = 'TIE';
         }else if(result == 1){
             
             localStorage.setItem('score', parseInt(parseInt(score) + 1));
             score = (localStorage.getItem('score'));
-            d.querySelector('.result').textContent = 'YOU WIN';
+            d.querySelector('.result-group__text').textContent = 'YOU WIN';
             
             d.querySelector('.score-group__number').textContent = score;
-            node.children[0].children[0].classList.add('winner');
+            node.children[0].children[0].classList.add('wrapper--winner');
         }else if(result == -1){
             if((score) - 1 < 0){
                 localStorage.setItem('score', 0);
@@ -27,10 +27,10 @@ export default function showResults(result, node){
             localStorage.setItem('score', parseInt(parseInt(score) - 1));
             }
             score = (localStorage.getItem('score'));
-            d.querySelector('.result').textContent = 'YOU LOSE';
+            d.querySelector('.result-group__text').textContent = 'YOU LOSE';
             d.querySelector('.score-group__number').textContent = score;
-            node.children[1].children[0].classList.add('winner');
+            node.children[1].children[0].classList.add('wrapper--winner');
         }
-        d.querySelector('.options-container').classList.add('options-container-active2');
+        d.querySelector('.options').classList.add('active2');
     },500)
 }

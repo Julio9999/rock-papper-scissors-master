@@ -5,22 +5,22 @@ import calc_result from "./calc_result.js";
 import showResults from "./showResults.js";
 
 const d = document,
-$oldchild = d.querySelector('.options-container');
+$oldchild = d.querySelector('.options');
 
 d.addEventListener('click', clickHandler);
 
 function clickHandler(e){
-    modal(e, '.modal-rules__icon', '.show-modal', '.modal-rules');
-    if((e.target.matches('.wrapper, .wrapper *')) && (!d.querySelector('.choosen'))){
-        replaceNodes(e, d.querySelector('.options-container'));
+    modal(e, '.modal-group__icon', '.show-modal', '.modal-group');
+    if((e.target.matches('.wrapper, .wrapper *')) && (!d.querySelector('.option--choosen'))){
+        replaceNodes(e, d.querySelector('.options'));
         setTimeout(()=>{
-            let result = calc_result(d.querySelector('.options-container').children[0], d.querySelector('.options-container').children[1]);
-            showResults(result, d.querySelector('.options-container'));
+            let result = calc_result(d.querySelector('.options').children[0], d.querySelector('.options').children[1]);
+            showResults(result, d.querySelector('.options'));
         },600)
     }
 
 
-    if(e.target.matches('.reset')){
+    if(e.target.matches('.result-group__button')){
         reset(d.querySelector('.container'), $oldchild, d.querySelector('.container').children[1]);
     }
 }
