@@ -383,7 +383,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1366px) {
   body {
     min-height: 100vh;
   }
