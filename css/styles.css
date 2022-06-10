@@ -37,7 +37,7 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   gap: 2.5rem;
-  height: auto;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }

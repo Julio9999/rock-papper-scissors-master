@@ -34,3 +34,4 @@ d.addEventListener('DOMContentLoaded', ()=>{
         d.querySelector('.score-group__number').textContent = localStorage.getItem('score');
     }
 })
+
