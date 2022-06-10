@@ -3,6 +3,7 @@ import replaceNodes from "./replaceNodes.js";
 import reset from "./reset.js";
 import calc_result from "./calc_result.js";
 import showResults from "./showResults.js";
+import scroll from "./scroll.js";
 
 const d = document,
 $oldchild = d.querySelector('.options');
@@ -26,6 +27,8 @@ function clickHandler(e){
 }
 
 d.addEventListener('DOMContentLoaded', ()=>{
+    scroll();
+    console.log(d.documentElement.clientWidth)
     if(localStorage.getItem('score') == null){
         localStorage.setItem('score', 0);
     }else{
