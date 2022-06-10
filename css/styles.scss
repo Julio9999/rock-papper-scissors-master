@@ -30,7 +30,7 @@ body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-family: 'Poppins', sans-serif;
     color: white;
-    min-height: 100vh;
+    height: 100vh;
     background-image: linear-gradient($Radial-Gradient);
     position: relative;
 }
@@ -337,6 +337,10 @@ body {
 
 
 @media screen and (min-width: 1000px) {
+
+    body{
+        min-height: 100vh;
+    }
 
     .header{
         margin-top: 2.55rem;

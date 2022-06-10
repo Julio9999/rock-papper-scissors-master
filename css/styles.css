@@ -16,7 +16,7 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-family: 'Poppins', sans-serif;
   color: white;
-  min-height: 100vh;
+  height: 100vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#1f3756), to(#141539));
   background-image: linear-gradient(#1f3756, #141539);
   position: relative;
@@ -384,6 +384,9 @@ body {
 }
 
 @media screen and (min-width: 1000px) {
+  body {
+    min-height: 100vh;
+  }
   .header {
     margin-top: 2.55rem;
     padding: 1.06rem 1.45rem;
