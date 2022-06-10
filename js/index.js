@@ -3,7 +3,6 @@ import replaceNodes from "./replaceNodes.js";
 import reset from "./reset.js";
 import calc_result from "./calc_result.js";
 import showResults from "./showResults.js";
-import scroll from "./scroll.js";
 
 const d = document,
 $oldchild = d.querySelector('.options');
