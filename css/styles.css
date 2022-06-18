@@ -100,7 +100,6 @@ body {
 .options {
   display: -ms-grid;
   display: grid;
-  row-gap: 1.6rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -112,14 +111,15 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/main/images/bg-pentagon.svg");
-  background-size: 90%;
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   width: 17.438rem;
   height: 20.717rem;
-  border: 1px black solid;
+  -webkit-column-gap: 2.5rem;
+          column-gap: 2.5rem;
 }
 
 .option {
@@ -143,12 +143,16 @@ body {
   grid-column: 1 / 3;
 }
 
-.option--2 {
+.option--2, .option--5 {
   justify-self: flex-start;
 }
 
-.option--3 {
+.option--3, .option--4 {
   justify-self: flex-end;
+}
+
+.option--4, .option--5 {
+  margin-top: 1rem;
 }
 
 .option--choosen {
@@ -219,6 +223,7 @@ body {
 
 .wrapper--papper .papper {
   background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/c599c840ffd240848ccce563b3d9bf45cf67a3d1/images/icon-paper.svg");
+  background-size: 50%;
 }
 
 .wrapper--scissors {
@@ -230,6 +235,7 @@ body {
 
 .wrapper--scissors .scissors {
   background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/c599c840ffd240848ccce563b3d9bf45cf67a3d1/images/icon-scissors.svg");
+  background-size: 50%;
 }
 
 .wrapper--spock {
@@ -241,6 +247,7 @@ body {
 
 .wrapper--spock .spock {
   background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/main/images/icon-spock.svg");
+  background-size: 50%;
 }
 
 .wrapper--lizard {
@@ -252,6 +259,7 @@ body {
 
 .wrapper--lizard .lizard {
   background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/main/images/icon-lizard.svg");
+  background-size: 50%;
 }
 
 .wrapper--rock {
@@ -263,6 +271,7 @@ body {
 
 .wrapper--rock .rock {
   background-image: url("https://raw.githubusercontent.com/Julio9999/rock-papper-scissors-master/c599c840ffd240848ccce563b3d9bf45cf67a3d1/images/icon-rock.svg");
+  background-size: 50%;
 }
 
 .vacio {
@@ -361,7 +370,8 @@ body {
 .result-group .result-group__button {
   border: none;
   color: #3b4363;
-  padding: 1rem 2.5rem;
+  height: 3rem;
+  width: 10rem;
   background-color: white;
   border-radius: 5px;
   font-size: 16px;
@@ -418,7 +428,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
   body {
     min-height: 100vh;
   }
@@ -434,6 +444,7 @@ body {
   .container {
     gap: 0rem;
     min-height: 100vh;
+    overflow: hidden;
   }
   .logo-container {
     -ms-flex-preferred-size: 50%;
@@ -458,18 +469,41 @@ body {
     font-size: 55px;
   }
   .options {
+    width: 30rem;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border: 1px black solid;
+    -webkit-column-gap: 3.5rem;
+            column-gap: 3.5rem;
+    row-gap: 0rem;
+    background-size: 70%;
+    margin-top: 2.5rem;
+    height: 28.299rem;
+  }
+  .option--2, .option--3 {
+    margin-bottom: 2.5rem;
+  }
+  .option--2, .option--5 {
+    justify-self: flex-start;
+  }
+  .option--4 {
+    justify-self: flex-end;
+  }
+  .wrapper {
+    padding: 1rem;
+  }
+  .wrapper .wrapper__item {
+    padding: 3.3rem;
   }
   .option--choosen {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;
+    -ms-grid-column-align: unset;
+        justify-self: unset;
+    margin-top: 0;
+    margin-bottom: 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .option--choosen .wrapper {
     padding: 1.8rem;
@@ -479,6 +513,9 @@ body {
   }
   .options.active1 {
     width: 50%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .options.active2 {
     width: 90%;
@@ -520,6 +557,10 @@ body {
     width: 25rem;
     border-radius: 10px;
     top: -120vh;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    gap: 3rem;
   }
   .modal-group .modal-group__heading {
     text-align: start;
@@ -535,9 +576,10 @@ body {
     z-index: 40;
   }
   .modal-group.active {
-    height: 25rem;
+    height: 30rem;
     top: 20%;
     z-index: 20;
+    gap: 0;
   }
 }
 /*# sourceMappingURL=styles.css.map */
