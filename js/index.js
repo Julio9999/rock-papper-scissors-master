@@ -27,7 +27,6 @@ function clickHandler(e){
 
 d.addEventListener('DOMContentLoaded', ()=>{
     scroll();
-    console.log(d.documentElement.clientWidth)
     if(localStorage.getItem('score') == null){
         localStorage.setItem('score', 0);
     }else{
