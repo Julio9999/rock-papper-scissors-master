@@ -157,8 +157,7 @@ body {
 
 .option--choosen {
   gap: 1.5rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  margin-top: 0;
 }
 
 .option--choosen .wrapper:hover {
@@ -378,7 +377,6 @@ body {
   letter-spacing: 2px;
   font-family: 'Barlow Semi Condensed';
   font-weight: 600;
-  width: 100%;
   cursor: pointer;
   -webkit-transition: .2s all ease-in-out;
   transition: .2s all ease-in-out;
@@ -401,8 +399,8 @@ body {
   position: absolute;
   border-radius: 50%;
   outline: 20px rgba(96, 110, 133, 0.2) solid;
-  -webkit-transform: scale(1.23);
-          transform: scale(1.23);
+  -webkit-transform: scale(1.31);
+          transform: scale(1.31);
   left: 0;
   top: 0;
   z-index: 0;
@@ -415,8 +413,8 @@ body {
   position: absolute;
   border-radius: 50%;
   outline: 20px rgba(96, 110, 133, 0.1) solid;
-  -webkit-transform: scale(1.62);
-          transform: scale(1.62);
+  -webkit-transform: scale(1.84);
+          transform: scale(1.84);
   left: 0;
   top: 0;
   z-index: 0;

@@ -21,28 +21,31 @@ export default function replaceNodes(e, oldchild) {
    $node1.classList.add('option--choosen1')
    d.querySelector('.container').replaceChild($newChild, oldchild);
    $node1.querySelector('.picked').textContent = 'YOU PICKED'
+
    
-   //$newChild.append($node1)
+   
    $newChild.appendChild($node1);
 
-   number = Math.round(Math.random() * (2));
-   $node2 = d.importNode($options[number], true);
-   console.log($node2)
-
+   $node2 = d.importNode($node1, true)
    $node2.classList.add('vacio');
    $node2.classList.add('option--choosen');
    $node2.classList.add('option--choosen2');
-   //$node2.querySelector('.wrapper').classList.add('option--choosen');
    $node2.querySelector('.picked').textContent = 'THE HOUSE PICKED'
-
-    
-
-    $newChild.classList.add('active1');
-    setTimeout(() => {
-        $newChild.appendChild($node2);
-        $node2.classList.remove('vacio');
-        //$node2.classList.remove($node2.classList[1])
-        //$node2.replaceChild($node3, $node2.children[0]);
+   $newChild.appendChild($node2)
+   
+   
+   
+   
+   $newChild.classList.add('active1');
+   setTimeout(() => {
+        number = Math.round(Math.random() * (2));
+        let $node3 = d.importNode($options[number], true);
+        $node3.classList.add('option--choosen');
+        $node3.classList.add('option--choosen2');
+        $node3.querySelector('.picked').textContent = 'THE HOUSE PICKED'
+        $newChild.replaceChild($node3, $node2)
+        //$newChild.appendChild($node3);
+        //$node3.classList.remove('vacio');
     }, 500)
 }
 

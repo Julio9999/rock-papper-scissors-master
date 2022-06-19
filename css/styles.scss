@@ -121,7 +121,6 @@ body {
 
 .option--1{
     grid-column: 1 / 3;
-    //align-self: flex-end;
 }
 
 .option--2, .option--5{
@@ -139,11 +138,12 @@ body {
 
 .option--choosen {
     gap: 1.5rem;
-    justify-self: center;
+    margin-top: 0;
     .wrapper:hover {
         transform: scale(1);
     }
 }
+
 
 .option--choosen1{
     grid-column:1/2;
@@ -316,7 +316,6 @@ body {
     .result-group__button {
         border: none;
         color: $Dark-Text;
-        //padding: 1rem 2.5rem;
         height: 3rem;
         width: 10rem;
         background-color: white;
@@ -325,7 +324,6 @@ body {
         letter-spacing: 2px;
         font-family: 'Barlow Semi Condensed';
         font-weight: 600;
-        width: 100%;
         cursor: pointer;
         transition: .2s all ease-in-out;
     }
@@ -349,7 +347,7 @@ body {
     position: absolute;
     border-radius: 50%;
     outline: 20px rgba(96, 110, 133, .2) solid;
-    transform: scale(1.23);
+    transform: scale(1.31);
     left: 0;
     top: 0;
     z-index: 0;
@@ -362,7 +360,7 @@ body {
     position: absolute;
     border-radius: 50%;
     outline: 20px rgba(96, 110, 133, .1) solid;
-    transform: scale(1.62);
+    transform: scale(1.84);
     left: 0;
     top: 0;
     z-index: 0;
